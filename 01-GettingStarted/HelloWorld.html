@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+
+Name: <input type="text" id="name"/><br/>
+<input type="button" value="Display Greeting" id="btn"/><br/>
+<p id="greeting"></p>
+
+<script>
+
+	$('#btn').click(sayHello);
+	function sayHello()
+	{
+		$('#greeting').text("Hello " + $('#name').val() + "!");
+	}	
+</script>
+
+</body>
+</html>
