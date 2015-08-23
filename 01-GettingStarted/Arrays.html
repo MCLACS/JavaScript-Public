@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	</head>
+
+	<style>
+		<!-- Local Styles Go Here... -->
+	</style>
+
+	<body>
+		<!-- HTML Goes Here... -->
+
+		<h2>Array of Strings</h2>
+		<ul id="strings">
+		</ul>
+
+		<script>
+			// Local JavaScript Goes Here...
+
+			// array of strings
+			var aryStrings_g = ['Tom Smith', 'Sandy Beach'];	
+			
+			function onLoad()
+			{			
+				for (var i = 0; i < aryStrings_g.length; i++)				
+				{
+					$('#strings').append("<li>" + aryStrings_g[i] + "</li>");
+				}
+			}
+					
+			$(document).ready(onLoad());
+
+		</script>
+
+	</body>
+</html>
+
+<!-- 
+	Additional Exercises:
+
+	1) 	Add a button to the page labeled Caps, that 
+		converts the name of each person in the list
+		to upper case (use the toUpperCase() method 
+		in JavaScript).
+
+	2) 	Visit the following page to view all of the methods
+		that the JavaScript array type supports.
+
+		http://www.w3schools.com/js/js_array_methods.asp
+
+	3) 	Add a button to the page labeled Reverse, that 
+		reverses the people in the list when it is 
+		clicked.
+
+	4) 	Add a button to the page labeled "Crazy Joe", that 
+		adds "Crazy Joe" to to the end of the list each time 
+		it is clicked.
+
+-->

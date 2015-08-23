@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	</head>
+
+	<style>
+		<!-- Local Styles Go Here... -->
+	</style>
+
+	<body>
+
+		<!-- HTML Goes Here... -->
+		<p>
+			<label for="val1">Value 1:</label><input type="text" id="val1"/><br/>
+			<label for="val2">Value 2:</label><input type="text" id="val2"/>
+		</p>
+		<input type="button" value="Plus" id="btn"/><br/>
+
+		<p id="plus"></p>	
+
+		<script>
+			// Local JavaScript Goes Here...
+			
+			function showPlus()
+			{
+				
+				var plus = $('#val1').val() + $('#val2').val();
+				$('#plus').text(plus);
+			}
+
+			$('#btn').click(showPlus);
+		</script>
+
+	</body>
+</html>
+
+<!-- 
+	Additional Exercises:
+
+	1) 	Fix the showPlus function so it concatenates the values
+		only if one of them is a string, and adds the values only 
+		if both of them are a number.  Your code should work for 
+		integers and floats.
+
+	2) 	Visit the following page to view all of the methods
+		that the JavaScript string type supports.
+
+		http://www.w3schools.com/js/js_number_methods.asp
+-->
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	</head>
+
+	<style>
+		<!-- Local Styles Go Here... -->
+	</style>
+
+	<body>
+		<!-- HTML Goes Here... -->
+
+		<h2>Array of Objects:</h2>
+		<ul id="objects">
+		</ul>
+
+		<script>
+			// Local JavaScript Goes Here...
+
+			// array of objects 
+			var aryObjects_g = [
+				{firstName : 'Tom', lastName: 'Smith', age: 22}, {firstName : 'Sandy', lastName: 'Beach', age: 18}
+			];	
+			
+			function onLoad()
+			{			
+				for (var i = 0; i < aryObjects_g.length; i++)				
+				{
+					$('#objects').append("<li>" + aryObjects_g[i].firstName + " " + 
+						aryObjects_g[i].lastName + " (" + aryObjects_g[i].age + ")</li>");
+
+					console.log(typeof aryObjects_g[i]);
+					console.log(typeof aryObjects_g[i].firstName);
+					console.log(typeof aryObjects_g[i].lastName);
+					console.log(typeof aryObjects_g[i].age);
+					console.log(aryObjects_g[i]);
+				}
+			}
+					
+			$(document).ready(onLoad());
+
+		</script>
+
+	</body>
+</html>
+
+<!-- 
+	Additional Exercises:
+
+	1) 	Add a button to the page labeled LastFirst, that 
+		when clicked, displays each person in the list with the 
+		last name listed first. For example: "Smith, Tom"
+
+	2) 	Add a button to the page labeled Sort, that 
+		sorts the people in the list alphabetically 
+		when it is clicked.		
+
+	3) 	Add a button to the page labeled Sum that, when clicked,
+		shows an alert box containing the total age of all people 
+		in the list.
+-->

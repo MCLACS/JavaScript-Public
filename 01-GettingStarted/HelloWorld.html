@@ -1,22 +1,75 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-</head>
-<body>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	</head>
 
-Name: <input type="text" id="name"/><br/>
-<input type="button" value="Display Greeting" id="btn"/><br/>
-<p id="greeting"></p>
+	<style>
+		<!-- Local Styles Go Here... -->
+	</style>
 
-<script>
+	<body>
 
-	$('#btn').click(sayHello);
-	function sayHello()
-	{
-		$('#greeting').text("Hello " + $('#name').val() + "!");
-	}	
-</script>
+		<!-- HTML Goes Here... -->
+		<p>
+			<label for="name">Name:</label><input type="text" id="name"/>
+		</p>
+		<input type="button" value="Display Greeting" id="btn"/><br/>
 
-</body>
+		<p id="greeting"></p>	
+
+		<script>
+			// Local JavaScript Goes Here...
+
+			/* 
+				this variable has global scope
+			*/
+			var hello_g = "Hello ";
+			
+			function sayHello()
+			{
+				// this variable has local scope...
+				var greeting = hello_g + $('#name').val() + "!";
+
+				$('#greeting').text(greeting);
+				console.log(greeting);
+				alert(greeting);
+			}
+
+			// notice that the function name is actually 
+			// a reference to a function object
+			$('#btn').click(sayHello);
+		</script>
+
+	</body>
 </html>
+
+<!-- 
+	Additional Exercises:
+
+	1) 	Add a field for age and then change the greeting so that 
+	   	it says "Cheers!" if the person is 21 or older.
+
+	2) 	Check to make sure that values have been entered for name 
+		and age.  If they are empty, use just an alert box asking
+		the user to please enter both fields.  Only display the 
+	   	greeting if they enter both values.
+
+	3) 	Use the following function to check that the age entered
+	   	is an integer.  If it is not, display an alert asking the
+	   	user to try again.
+
+	   	function isInteger(value) 
+	   	{
+	   		value = parseInt(value);
+     		return 	typeof value === "number" && 
+           			isFinite(value) && 
+           			Math.floor(value) === value;
+        }
+
+	4) 	Visit the following page to view all of the methods
+		that the JavaScript string type supports.
+
+		http://www.w3schools.com/js/js_string_methods.asp        
+-->
+
