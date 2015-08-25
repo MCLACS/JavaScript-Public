@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	</head>
+
+	<style>
+		/* Local Styles Go Here */
+		p
+		{
+			width: 100px;
+			height: 60px;
+			background-color: gray;
+		}
+
+		div
+		{
+			margin: 10px;
+			padding: 5px;
+			
+			width: 500px;
+			border: 1px solid black;
+		}
+	</style>
+
+	<body>
+
+		<!-- HTML Goes Here... -->
+		<div>			
+			<p></p>
+			<p></p>
+			<p></p>
+			<span><p></p></span>
+			<p></p>			
+		</div>
+
+		<p></p>
+		<p></p>
+		<p></p>
+
+		<input id="btn1" type="button" value="Change Children of div"/>
+		<input id="btn2" type="button" value="Change Not Children of div"/>
+		<input id="btn3" type="button" value="Change First and Last Child of P"/>
+
+		<script>
+			// Local JavaScript Goes Here...
+			function changeChildOf()
+			{
+				$("p").text("");
+				$("div > p").text("This are direct children of div!");				
+			}
+			function changeNotChildOf()
+			{
+				$("p").text("");
+				$("p:not(div > p)").text("This are not direct children of div!");				
+			}
+			function changeFirstLast()
+			{
+				$("p").text("");
+				$("p:first-child").text("First Child");				
+				$("p:last-child").text("Last Child");				
+			}
+
+			$('#btn1').click(changeChildOf);
+			$('#btn2').click(changeNotChildOf);
+			$('#btn3').click(changeFirstLast);
+
+		</script>
+
+	</body>
+</html>
+
+<!-- 
+	Additional Exercises:
+
+	1)	Add a fourth button that sets the text to 'Descendent of div' of all p 
+		elements that are descendents of a div element.
+		Consult http://www.w3schools.com/jquery/jquery_ref_selectors.asp
+		for help.
+
+	2)	Add a fifth button that sets the text to "Only child" for all
+		p elements that are the only child of their parent.
+		Consult http://www.w3schools.com/jquery/jquery_ref_selectors.asp
+		for help.
+-->

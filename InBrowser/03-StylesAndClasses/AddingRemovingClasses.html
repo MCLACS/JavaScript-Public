@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	</head>
+
+	<style>
+		/* Local Styles Go Here */
+		p
+		{
+			height: 100px;
+			width: 100px;
+			border: 1px black solid;
+		}
+
+		.invisible
+		{
+			display: none;
+		}
+
+		.bugs
+		{
+			 background-image: url("bugs.jpg");
+		}
+
+		.bunny
+		{
+			 background-image: url("bunny.jpg");
+		}
+	</style>
+
+	<body>
+
+		<!-- HTML Goes Here... -->
+		<p>Bugs</p>
+		<p>Bunny</p>
+		<p class="bugs"></p>
+
+		<script>
+			// Local JavaScript Goes Here...
+			$('p:nth-child(2)').addClass("invisible");
+			
+			function toggleMe()
+			{
+				if ($(this).text() == "Bugs")
+				{
+					$('p:nth-child(1)').addClass("invisible");		
+					$('p:nth-child(2)').removeClass("invisible");		
+					$('p:nth-child(3)').addClass("bunny");		
+					$('p:nth-child(3)').removeClass("bugs");		
+				}
+				else
+				{
+					$('p:nth-child(2)').addClass("invisible");		
+					$('p:nth-child(1)').removeClass("invisible");							
+					$('p:nth-child(3)').addClass("bugs");		
+					$('p:nth-child(3)').removeClass("bunny");							
+				}
+			}			
+
+			$("p").click(toggleMe);
+		</script>
+
+	</body>
+</html>
+
+<!-- 
+	Additional Exercises:
+
+	1)	Fix the bug in the code that causes clicking the bunny image
+		image to change everything to bugs.  The correct behavior should
+		be ignoring any clicks on the paragraph that contains images.
+
+	2)	Download a third image of an exterminator (resize it to 100x100)
+		and have that image display ronadomly (with a 25% chance) instead
+		of the bugs image.
+-->

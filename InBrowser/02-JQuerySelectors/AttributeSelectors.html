@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	</head>
+
+	<style>
+		/* Local Styles Go Here */
+		div
+		{
+			margin: 10px;
+			padding: 5px;
+			height: 50px;
+			width: 200px;
+			border: 1px solid black;
+		}
+	</style>
+
+	<body>
+
+		<!-- HTML Goes Here... -->
+		<div>Not sure how cool I am</div>
+		<div coolness="high"></div>
+		<div coolness="high"></div>
+		<div coolness="med"></div>
+		<div coolness="med"></div>
+		<div coolness="low"></div>
+		<div coolness="low"></div>
+		<div>Not sure how cool I am</div>
+
+		<input id="btn1" type="button" value="Change High Coolness" key="high"/>
+		<input id="btn2" type="button" value="Change Medium Coolness" key="med"/>
+		<input id="btn3" type="button" value="Change Low Coolness" key="low"/>
+
+		<script>
+			// Local JavaScript Goes Here...
+			function changeCoolness()
+			{
+				var value = $(this).attr("key");
+				$("div[coolness]").text("");			
+				$("div[coolness='" + value + "']").text("My coolness is " + value);			
+			}
+
+			$("input[type='button']").click(changeCoolness);
+
+		</script>
+
+	</body>
+</html>
+
+<!-- 
+	Additional Exercises:
+
+	1)	Add a fourth button that sets the text of all divs 
+		with a coolness of high or med equal "I am cool".
+		Consult http://www.w3schools.com/jquery/jquery_ref_selectors.asp
+		for help.
+
+	2)	Add a fifth button that sets the text of all divs 
+		with a coolness value that contains the letter 'e'.
+		Consult http://www.w3schools.com/jquery/jquery_ref_selectors.asp
+		for help.
+-->

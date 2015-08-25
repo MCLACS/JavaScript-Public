@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	</head>
+
+	<style>
+		/* Local Styles Go Here */
+		select
+		{
+			width: 200px;	
+		}
+
+		.bugs
+		{
+			width: 100px;
+			height: 100px;
+			background-image: url("bugs.jpg");
+		}
+
+		.bunny
+		{
+			width: 100px;
+			height: 100px;
+			background-image: url("bunny.jpg");
+		}		
+
+		.bugs-bunny
+		{
+			width: 200px;
+			height: 350px;
+			background-image: url("bugs-bunny.jpg");
+		}		
+	</style>
+
+	<body>
+		<!-- HTML Goes Here... -->
+		<select size="3">
+  			<option>bugs</option>
+  			<option>bunny</option>
+  			<option>bugs-bunny</option>
+		</select>
+
+		<p></p>
+
+		<script>
+			// Local JavaScript Goes Here...
+			function changePicture()
+			{
+				$("p").removeClass();
+				$('p').addClass($(this).val());
+			}
+
+			$('select').change(changePicture);
+		</script>
+
+	</body>
+</html>
+
+<!-- 
+	Additional Exercises:
+
+	1)	Add a new paragraph at the top of the HTML file that
+		tells a short story about Bugs Bunny.  What happens
+		when you select an item in the list?  Fix the
+		code so that the paragraph that was added does
+		not change when the selected item change.
+
+	2)	Change the code so that when the page first loads "bugs" 
+		is selected in the list box and the bugs image is also displayed.
+
+	3)	Add a second list box that allows the user to choose from three
+		different border styles.  When the user selects a border,
+		the border of the image should change to match the selection.
+-->

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	</head>
+
+	<style>
+		/* Local Styles Go Here */
+		#magicP
+		{
+			color: rgb(0, 0, 0);
+		}
+	</style>
+
+	<body>
+
+		<!-- HTML Goes Here... -->
+		<p id="magicP">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+			ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+			laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+			voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+			non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+		<p>
+			<input type="button" value="Rotate Color"/>
+		</p>
+
+		<script>
+			function rotateColor()
+			{
+				var color = $('#magicP').css("color");
+				console.log(color);
+				if (color == "rgb(0, 0, 0)")
+					color = "rgb(255, 0, 0)";
+				else if (color == "rgb(255, 0, 0)")
+					color = "rgb(0, 255, 0)";
+				else if (color == "rgb(0, 255, 0)")
+					color = "rgb(0, 0, 255)";
+				else
+					color = "black";
+				$('#magicP').css("color", color);
+			}
+			$('input').click(rotateColor);
+		</script>
+
+	</body>
+</html>
+
+<!-- 
+	Additional Exercises:
+
+	1)	Add a second button that cycles the width of the paragraph 
+		from 500px to 1000px to 1500px and then back to 500px;
+
+	2)	Add a third button that changes the color of the text in 
+		the paragraph to a random shade of orange.  Hint: orange is
+		a created by mixing red and green.  You can learn
+		how to generate random numbers in JavaScrip here:
+		http://www.w3schools.com/jsref/jsref_random.asp
+
+	3)	Add a fourth button that uses the * selector to set the 
+		background color of all elements on the page.
+
+-->

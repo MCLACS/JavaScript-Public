@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	</head>
+
+	<style>
+		/* Local Styles Go Here */
+		div
+		{
+			margin: 10px;
+			padding: 5px;
+			height: 50px;
+			width: 200px;
+			border: 1px solid black;
+		}
+	</style>
+
+	<body>
+
+		<!-- HTML Goes Here... -->
+		<div id="first" class="odd"></div>
+		<div class="even"></div>
+		<div class="odd"></div>
+		<div class="even"></div>
+		<div class="odd"></div>
+		<div class="even"></div>
+		<div class="odd"></div>
+		<div id="last" class="even" ></div>	
+
+		<input id="btn1" type="button" value="Change Odds and Evens"/>
+		<input id="btn2" type="button" value="Change First and Last"/>
+		<input id="btn3" type="button" value="Change All"/>		
+
+		<script>
+			// Local JavaScript Goes Here...
+			function changeOddEven()
+			{
+				$("div").text("");				
+				$(".odd").text("This are odd!");
+				$(".even").text("This is even!");				
+			}
+			function changeFirstLast()
+			{
+				$("div").text("");				
+				$("#first").text("This are first!");
+				$("#last").text("This is Last!");				
+			}
+			function changeAll()
+			{
+				$("div").text("");				
+				$("div").text("We are all divs!");				
+			}
+
+			$('#btn1').click(changeOddEven);
+			$('#btn2').click(changeFirstLast);
+			$('#btn3').click(changeAll);
+
+		</script>
+
+	</body>
+</html>
+
+<!-- 
+	Additional Exercises:
+
+	1)	Add a fourth button that sets the text of all even
+		divs to "<h1>I am big</h1>".  Is the h1 tag working?
+
+	2) 	Edit the code above so that even and odd divs are 
+		changed using the even and odd selectors.  You can
+		learn how to use these selectors here:
+		http://www.w3schools.com/jquery/jquery_ref_selectors.asp.
+-->
