@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	</head>
+
+	<style>
+		/* Local Styles Go Here */
+		div
+		{			
+			border: 1px solid black;			
+			padding:10px;
+			margin:50px;
+			height:100px;
+			width:200px;
+			color: white;
+		}
+
+		#top
+		{
+			background-color: #000066;						
+		}
+
+		#middle1
+		{
+			background-color: #DDDDDD;
+		}
+		#middle2
+		{
+			background-color: #660000;
+			border-top: 0px solid black;						
+		}
+		#middle3
+		{
+			background-color: #006600;	
+			display: none;						
+		}
+		p
+		{
+		}
+
+	</style>
+
+	<body>
+		<!-- HTML Goes Here... -->
+		<div id="top">
+			Click me
+		</div>
+		<div id="middle1">
+			I will toggle
+		</div>
+		<div id="middle2">
+			I will slide up
+		</div>
+		<div id="middle3">
+			I will slide down
+		</div>
+		<p id="status">I will report when the slide down is over</p>
+		
+
+		<script>
+		$("#top").click(function() {
+			$("#middle1").slideToggle(200);
+			$("#middle2").slideUp(500);
+			$("#middle3").slideDown(800, function () 
+			{ 
+				$("#status").text("Wow, slide away!");
+			});
+		} );
+			// Local JavaScript Goes Here...
+		</script>
+
+	</body>
+</html>

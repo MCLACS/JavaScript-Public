@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	</head>
+
+	<style>
+		/* Local Styles Go Here */
+	</style>
+
+	<body>
+		<!-- HTML Goes Here... -->
+		
+		<p>Paragraph</p>
+		
+
+		</ul>
+		<input type="button" value="before"/>
+		<input type="button" value="after"/>
+
+		<script>
+			// Local JavaScript Goes Here...
+			var count = 0;
+			$("input[value='before']").click(function () 
+			{
+				$("p").before("<h2>New Item " + count + "</h2>");
+				count++;
+			});
+
+			$("input[value='after']").click(function () 
+			{
+				$("p").after("<h2>New Item " + count + "</h2>");
+				count++;
+			});
+		</script>
+
+	</body>
+</html>

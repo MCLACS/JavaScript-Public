@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	</head>
+
+	<style>
+		/* Local Styles Go Here */
+	</style>
+
+	<body>
+		<!-- HTML Goes Here... -->
+		<ul>
+		</ul>
+		<input type="button" value="prepend"/>
+		<input type="button" value="append"/>
+
+		<script>
+			// Local JavaScript Goes Here...
+			var count = 0;
+			$("input[value='prepend']").click(function () 
+			{
+				$("ul").prepend("<li>New Item " + count + "</li>");
+				count++;
+			});
+
+			$("input[value='append']").click(function () 
+			{
+				$("ul").append("<li>New Item " + count + "</li>");
+				count++;
+			});
+		</script>
+
+	</body>
+</html>

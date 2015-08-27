@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	</head>
+
+	<style>
+		/* Local Styles Go Here */
+		ul
+		{
+			border: 2px solid black;
+		}
+	</style>
+
+	<body>
+		<!-- HTML Goes Here... -->		
+		<p>Click list to empty() all elements in list</p>
+		<ul id="emptyMe">
+			<li>One</li>
+			<li>Two</li>
+			<li>Three</li>
+		</ul>
+
+		<p>Click second item to remove() it from list</p>
+		<ul>			
+			<li>One</li>
+			<li id="removeLI">Two</li>
+			<li>Three</li>
+		</ul>
+
+		<p>Click second item to empty() it</p>
+		<ul>			
+			<li>One</li>
+			<li id="emptyLI">Two</li>
+			<li>Three</li>
+		</ul>
+
+		<p>Click list to remove() the entire list</p>
+		<ul id="removeUL">
+			<li>One</li>
+			<li>Two</li>
+			<li>Three</li>
+		</ul>
+
+		<script>
+			// Local JavaScript Goes Here...
+			$("#emptyMe").click(function () 
+			{
+				$(this).empty();				
+			});
+
+			$("#removeLI").click(function () 
+			{
+				$(this).remove();				
+			});
+
+			$("#emptyLI").click(function () 
+			{
+				$(this).empty();				
+			});
+
+			$("#removeUL").click(function () 
+			{
+				$(this).remove();				
+			});
+		</script>
+
+	</body>
+</html>

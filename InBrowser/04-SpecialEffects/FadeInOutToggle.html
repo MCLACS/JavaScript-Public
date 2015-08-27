@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	</head>
+
+	<style>
+		/* Local Styles Go Here */
+		div
+		{			
+			border: 1px solid black;			
+			padding:10px;
+			margin:0px;
+			height:100px;
+			width:200px;
+			float: left;
+			color: white;
+		}
+
+		#top
+		{
+			background-color: #000066;						
+		}
+
+		#middle1
+		{
+			background-color: #DDDDDD;
+			display: none;
+		}
+		#middle2
+		{
+			background-color: #660000;
+			display: none;
+		}
+		#middle3
+		{
+			background-color: #006600;
+		}
+		p
+		{
+			clear: both;
+		}
+
+	</style>
+
+	<body>
+		<!-- HTML Goes Here... -->
+		<div id="top">
+			Click me
+		</div>
+		<div id="middle1">
+			I will toggle
+		</div>
+		<div id="middle2">
+			I will fade in
+		</div>
+		<div id="middle3">
+			I will fade out
+		</div>
+		<p id="status">I will report when the fade in is over</p>
+		
+
+		<script>
+		$("#top").click(function() {
+			$("#middle1").fadeToggle(200);
+			$("#middle2").fadeIn(500);
+			$("#middle3").fadeOut(800, function () 
+			{ 
+				$("#status").text("Wow, it is gone!");
+			});
+		} );
+			// Local JavaScript Goes Here...
+		</script>
+
+	</body>
+</html>
