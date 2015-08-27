@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	</head>
+
+
+	<style>
+		/* Local Styles Go Here */
+		div 
+		{
+			width: 50%;
+			margin-top:25px;
+			border: 1px solid black;
+			background-color: #000099;
+			color: white;
+		}
+
+		label, input
+		{
+			margin-left: 10px;
+		}
+		table
+		{
+			width: 50%;
+			border: 1px solid blue;	
+			border-collapse: collapse;
+			background-color: #EEEEEE;
+		}
+
+		td
+		{
+			border: 1px solid blue;	
+		}
+
+		th
+		{
+			background-color: black;
+			color: white;
+		}
+
+	</style>
+
+	<body>
+		<!-- HTML Goes Here... -->
+		<table>
+			<thead>
+				<tr><th>Name</th><th>Age</th><th>Delete</th></tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+		<div>
+			<p>
+				<label for="name">Name: </label><input type="text" id="name"/>
+				<label for="name">Age: </label><input type="text" id="age"/>			
+				<input type="button" id="add" value="Add"/>
+			</p>
+		</div>
+
+		<script>
+			// Local JavaScript Goes Here...			
+			$('#add').click(function() 
+			{
+				$("tbody").append("<tr><td>"+$("#name").val()+"</td><td>"+$("#age").val()+"</td><td class='delete'>X</td></tr>");
+				age++;
+				$('.delete').click(function() 
+				{
+					$(this).parent().remove();
+				});				
+			});
+		</script>
+
+	</body>
+</html>
