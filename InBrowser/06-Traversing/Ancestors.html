@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	</head>
+
+
+	<style>
+		/* Local Styles Go Here */
+		body, div, ul, span
+		{
+			border: 1px solid black;
+		}
+		.parent
+		{
+			border: 2px solid blue;
+		}
+	</style>
+
+	<body>
+		<!-- HTML Goes Here... -->
+		<div>
+			<ul>
+				<li><span>Item</li>
+			</ul>
+		</div>
+		<p></p>
+
+		<script>
+			// Local JavaScript Goes Here...
+			$(document).ready(function()
+			{
+   				var parents = $("li").parents();
+   				parents.addClass("parent");
+			});
+		</script>
+
+	</body>
+</html>
+
+<!-- 
+	Additional Exercises:
+
+	1)	Change the code so only the immediate parent of the ul 
+		is given a blue background.  For a hint, check out:
+		http://www.w3schools.com/jquery/jquery_traversing_ancestors.asp
+
+	2)	Change the code so that all elements between the span to the div
+		are given a blue background.  For a hint, check out:
+		http://www.w3schools.com/jquery/jquery_traversing_ancestors.asp
+
+
+		
+-->

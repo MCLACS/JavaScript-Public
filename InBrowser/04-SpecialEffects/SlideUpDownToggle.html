@@ -21,20 +21,11 @@
 			background-color: #000066;						
 		}
 
-		#middle1
+		#middle
 		{
 			background-color: #DDDDDD;
 		}
-		#middle2
-		{
-			background-color: #660000;
-			border-top: 0px solid black;						
-		}
-		#middle3
-		{
-			background-color: #006600;	
-			display: none;						
-		}
+
 		p
 		{
 		}
@@ -46,29 +37,40 @@
 		<div id="top">
 			Click me
 		</div>
-		<div id="middle1">
-			I will toggle
+		<div id="middle">			
 		</div>
-		<div id="middle2">
-			I will slide up
-		</div>
-		<div id="middle3">
-			I will slide down
-		</div>
-		<p id="status">I will report when the slide down is over</p>
 		
 
 		<script>
-		$("#top").click(function() {
-			$("#middle1").slideToggle(200);
-			$("#middle2").slideUp(500);
-			$("#middle3").slideDown(800, function () 
-			{ 
-				$("#status").text("Wow, slide away!");
-			});
-		} );
 			// Local JavaScript Goes Here...
+			$("#top").click(function() {
+				$("#middle").slideUp();
+			} );			
 		</script>
 
 	</body>
 </html>
+
+<!-- 
+	Additional Exercises:
+
+	1)	Change the code so that the gray div is visible to start
+		and slides up when the blue div is clicked.  For 
+		help you can visit this page: 
+		http://www.w3schools.com/jquery/jquery_slide.asp
+
+	2)	Change the code so that when the gray div slides up, it happens
+		slowly.  For help you can visit this page:
+		http://www.w3schools.com/jquery/jquery_slide.asp
+
+	3)	Change the code so that the gray div is toggled (slideUp/slideDown)
+		when the blue div is clciked.  For help you can visit this page:
+		http://www.w3schools.com/jquery/jquery_slide.asp
+
+	4)	Add a paragraph at the bottom of the page and have the text
+		change to "SlideUp" after the gray div slides up, and "SlideDown" after
+		the gray div is slides down.  Use the "callback" feature to do 
+		this.  For help you can visit this page:
+		http://www.w3schools.com/jquery/jquery_slide.asp
+
+-->

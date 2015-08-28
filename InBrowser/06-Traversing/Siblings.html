@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	</head>
+
+
+	<style>
+		/* Local Styles Go Here */
+		body, div, ul, span
+		{
+			border: 1px solid black;
+		}
+		.siblings
+		{
+			border: 2px solid blue;
+		}
+	</style>
+
+	<body>
+		<!-- HTML Goes Here... -->
+		<div>
+			<ul>
+				<li><span>Item 1</li>
+				<li id="item2"><span>Item 2</li>
+				<li><span>Item 3</li>
+				<li><span>Item 4</li>
+				<li><span>Item 5</li>
+			</ul>
+		</div>
+		<p></p>
+
+		<script>
+			// Local JavaScript Goes Here...
+			$(document).ready(function()
+			{
+    			var siblings = $("li").siblings();
+   				siblings.addClass("siblings");
+			});
+		</script>
+
+	</body>
+</html>
+
+<!-- 
+	Additional Exercises:
+
+	1)	Change the code so only the next sibling of the second
+		item in the list is given a blue background.  For a hint, check out:
+		http://www.w3schools.com/jquery/jquery_traversing_siblings.asp
+
+	2)	Change the code so all siblings after the second
+		item in the list are given a blue background.  For a hint, check out:
+		http://www.w3schools.com/jquery/jquery_traversing_siblings.asp
+
+
+
+		
+-->

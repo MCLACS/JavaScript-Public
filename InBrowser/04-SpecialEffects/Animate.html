@@ -13,20 +13,11 @@
 			width: 50px;
 			background-color: gray;
 		}
-		#div2
-		{
-			position: relative;
-			height: 50px;
-			width: 50px;
-			background-color: yellow;
-		}
 	</style>
 
 	<body>
 		<!-- HTML Goes Here... -->
 		<div id="div1">
-		</div>
-		<div id="div2">
 		</div>
 
 		<script>
@@ -39,15 +30,18 @@
 			        width: '100px'
 			    }, 1000);
 			}); 
-			$("#div2").click(function()
-			{
-			    $("#div2").animate({
-			        left: '+=50px',
-			        height: '+=50px',
-			        width: '+=50px'
-			    }, 1000);
-			}); 
 		</script>
 
 	</body>
 </html>
+<!-- 
+	Additional Exercises:
+
+	1)	Add a yellow div below the gray one.  Change the code so that
+		the EACH TIME the yellow div is clicked it gets 50px taller,
+		50px wider, and it moves to the left 50px.  Remember, you should
+		be able to click on it multiple times, and each time
+		causes the animation to run. For help you can visit this page: 
+		http://www.w3schools.com/jquery/jquery_animate.asp
+		
+-->

@@ -13,7 +13,6 @@
 			margin:0px;
 			height:100px;
 			width:200px;
-			float: left;
 			color: white;
 		}
 
@@ -22,23 +21,10 @@
 			background-color: #000066;						
 		}
 
-		#middle1
+		#middle
 		{
 			background-color: #DDDDDD;
 			display: none;
-		}
-		#middle2
-		{
-			background-color: #660000;
-			display: none;
-		}
-		#middle3
-		{
-			background-color: #006600;
-		}
-		p
-		{
-			clear: both;
 		}
 
 	</style>
@@ -48,29 +34,41 @@
 		<div id="top">
 			Click me
 		</div>
-		<div id="middle1">
-			I will toggle
+		<div id="middle">
 		</div>
-		<div id="middle2">
-			I will fade in
-		</div>
-		<div id="middle3">
-			I will fade out
-		</div>
-		<p id="status">I will report when the fade in is over</p>
+		<p id="status">I will report when the hide is over</p>
 		
 
 		<script>
-		$("#top").click(function() {
-			$("#middle1").fadeToggle(200);
-			$("#middle2").fadeIn(500);
-			$("#middle3").fadeOut(800, function () 
-			{ 
-				$("#status").text("Wow, it is gone!");
-			});
-		} );
 			// Local JavaScript Goes Here...
+			$("#top").click(function() {
+				$("#middle").fadeIn();
+			} );			
 		</script>
 
 	</body>
 </html>
+
+<!-- 
+	Additional Exercises:
+
+	1)	Change the code so that the gray div is visible to start
+		and is fadded out when the blue div is clicked.  For 
+		help you can visit this page: 
+		http://www.w3schools.com/jquery/jquery_fade.asp
+
+	2)	Change the code so that when the gray div fades out, it happens
+		slowly.  For help you can visit this page:
+		http://www.w3schools.com/jquery/jquery_fade.asp
+
+	3)	Change the code so that the gray div is toggled (fadeIn/fadeOut)
+		when the blue div is clciked.  For help you can visit this page:
+		http://www.w3schools.com/jquery/jquery_fade.asp
+
+	4)	Add a paragraph at the bottom of the page and have the text
+		change to "FadeIn" after the gray div appears, and "FadeOut" after
+		the gray div is hidden.  Use the "callback" feature to do 
+		this.  For help you can visit this page:
+		http://www.w3schools.com/jquery/jquery_fade.asp
+
+-->
