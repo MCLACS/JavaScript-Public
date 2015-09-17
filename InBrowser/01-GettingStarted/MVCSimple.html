@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	</head>
+
+
+	<style>
+		/* Local Styles Go Here */
+	</style>
+
+	<body>
+		<!-- HTML Goes Here... -->
+
+		<div id="container">
+			<p>
+				<label for="semester">Semester:</label>
+					<input id="semester" type="text"/>
+			</p>
+
+			<p>
+				<label for="grade0">Grade #1:</label>
+					<input id="grades0" class="grades" type="text"/>
+			</p>
+
+			<p>
+				<label for="grade1">Grade #2:</label>
+					<input id="grades1" class="grades" type="text"/>
+			</p>
+
+			<p>
+				<label for="grade2">Grade #3:</label>
+					<input id="grades2" class="grades" type="text"/>
+			</p>
+
+			<p>
+				<label for="grade3">Grade #4:</label>
+					<input id="grades3" class="grades" type="text"/>
+			</p>
+
+			<p>
+				<label for="average">Average:</label>
+					<input id="average" type="text"/>
+			</p>
+
+		</div>
+
+
+		<script>
+			// Local JavaScript Goes Here...
+		
+			// this is the model
+			var model = 
+			{
+				semester: "Undefined",
+				grades: [0, 0, 0, 0]
+			};
+
+			model.calcAverage = 
+				function ()
+				{
+					var sum = 0.0;
+					for (var i = 0; i < model.grades.length; i++)
+					{
+						sum = sum + model.grades[i];
+					}
+					return sum / model.grades.length;
+				};
+
+
+
+			
+			// view 
+			function updateView()
+			{
+				$("#semester").val(model.semester);
+
+				for (var i = 0; i < model.grades.length; i++)
+				{
+					$("#grades" + i).val(model.grades[i]);
+				}
+
+				$("#average").val(model.calcAverage());
+			}
+
+			// controller
+			$(".grades").change(function ()
+			{
+				var id = $(this).attr("id");
+				var index = parseInt(id[6]);
+
+				// update model
+				model.grades[index] = parseInt($(this).val());
+
+				// update the view
+				updateView();
+			});
+
+			$("#semester").change(function ()
+			{
+				model.semester = $(this).val();
+				updateView();
+			});
+
+			updateView();
+
+		</script>
+
+	</body>
+</html>
