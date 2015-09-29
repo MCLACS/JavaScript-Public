@@ -24,11 +24,13 @@
 			// Local JavaScript Goes Here...
 			$("#div1").click(function()
 			{
-			    $("#div1").animate({
+				var props = {
 			        left: '100px',
 			        height: '100px',
 			        width: '100px'
-			    }, 1000);
+			    };
+
+			    $("#div1").animate(props, 1000);
 			}); 
 		</script>
 
@@ -39,7 +41,7 @@
 
 	1)	Add a yellow div below the gray one.  Change the code so that
 		the EACH TIME the yellow div is clicked it gets 50px taller,
-		50px wider, and it moves to the left 50px.  Remember, you should
+		50px wider, and it moves to the right 50px.  Remember, you should
 		be able to click on it multiple times, and each time
 		causes the animation to run. For help you can visit this page: 
 		http://www.w3schools.com/jquery/jquery_animate.asp
