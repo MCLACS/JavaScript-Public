@@ -21,7 +21,7 @@
 		<!-- HTML Goes Here... -->
 		<div>
 			<ul>
-				<li><span>Item</li>
+				<li><span>Item</span></li>
 			</ul>
 		</div>
 		<p></p>
@@ -30,7 +30,7 @@
 			// Local JavaScript Goes Here...
 			$(document).ready(function()
 			{
-   				var parents = $("li").parents();
+   				var parents = $("li").parent();
    				parents.addClass("parent");
 			});
 		</script>
@@ -41,12 +41,12 @@
 <!-- 
 	Additional Exercises:
 
-	1)	Change the code so only the immediate parent of the ul 
-		is given a blue background.  For a hint, check out:
+	1)	Change the code so only the immediate parent of the li 
+		is given a blue border.  For a hint, check out:
 		http://www.w3schools.com/jquery/jquery_traversing_ancestors.asp
 
 	2)	Change the code so that all elements between the span to the div
-		are given a blue background.  For a hint, check out:
+		are given a blue border.  For a hint, check out:
 		http://www.w3schools.com/jquery/jquery_traversing_ancestors.asp
 
 
