@@ -13,6 +13,15 @@
 			width: 50px;
 			background-color: gray;
 		}
+
+		#div2
+		{
+			position: relative;
+			height: 50px;
+			width: 50px;
+			background-color: yellow;
+		}
+
 	</style>
 
 	<body>
@@ -20,7 +29,12 @@
 		<div id="div1">
 		</div>
 
+		<div id="div2">
+		</div>
+
 		<script>
+			var model = {l: 0, h : 50, w: 50};
+
 			// Local JavaScript Goes Here...
 			$("#div1").click(function()
 			{
@@ -32,6 +46,22 @@
 
 			    $("#div1").animate(props, 1000);
 			}); 
+
+			$("#div2").click(function()
+			{				
+				model.l = model.l + 50;				
+				model.h = model.h + 50;	
+				model.w = model.w + 50;	
+
+				var props = {
+			        left: model.l + 'px',
+			        height: model.h + 'px',
+			        width: model.w + 'px'
+			    };
+
+			    $("#div2").animate(props, 1000);
+			}); 
+
 		</script>
 
 	</body>

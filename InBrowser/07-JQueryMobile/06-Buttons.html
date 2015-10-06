@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	</head>
+
+
+	<style>
+		/* Local Styles Go Here */
+	</style>
+
+	<body>
+		<!-- HTML Goes Here... -->
+		<div data-role="page" id="MainPage">
+
+		  	<div data-role="header">
+		    	<h1>Welcome To My Homepage</h1>
+		  	</div>
+			
+		  	<div class="ui-content">
+		  		<div data-role="controlgroup" data-type="horizontal">
+			  		<input type="button" value="Input"/>
+					<button class="ui-btn">Button</button>
+					<a href="#SecondPage" class="ui-btn">Hyperlink (goto next page)</a>
+			</div>
+		  	</div>
+
+			<div data-role="footer">
+				<h1>Footer Text</h1>
+			</div>			
+		</div>
+
+		<div data-role="page" id="SecondPage">
+			
+		  <div data-role="header">
+		    <h1>Welcome To My Second Page</h1>		    
+		  </div>
+
+		  <div class="ui-content">
+		  		<a href="#" class="ui-btn" data-rel="back">Go Back</a>
+		  		<a href="#" class="ui-btn ui-btn-inline" data-rel="back">Go Back</a>
+		  		<a href="#" class="ui-btn ui-icon-back ui-btn-icon-left" data-rel="back">Go Back</a>
+		  		<a href="#" class="ui-btn ui-icon-back  ui-btn-icon-notext" data-rel="back">Go Back</a>
+		  </div>
+
+		  <div data-role="footer">
+		    <h1>Footer Text</h1>
+		  </div>
+		</div>
+
+		<script>
+			// Local JavaScript Goes Here...
+		</script>
+
+	</body>
+</html>
+
+<!-- corners and shadows, mini, different icons different positions-->
