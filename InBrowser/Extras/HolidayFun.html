@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	</head>
+
+
+	<style>
+		/* Local Styles Go Here */
+
+		#treeDiv
+		{
+			width: 600px;
+			height: 500px;
+			border: 1px solid black;
+			background-image: url("tree.jpg");	
+		}
+
+		#treeDiv div
+		{
+			background-color: red;
+			width: 20px;
+			height: 20px;
+			border-radius: 10px;
+			display: block-inline;
+			position: absolute;
+		}
+	</style>
+
+	<body>
+		<!-- HTML Goes Here... -->
+		<div id="treeDiv">
+			<div></div><div></div><div></div><div></div>
+			<div></div><div></div><div></div><div></div>
+			<div></div><div></div><div></div><div></div>
+			<div></div><div></div><div></div><div></div>
+		</div>
+		<input id="interval" type="text"/><input id="btn" type="button" value="Change"/>
+
+		<script>
+			// Local JavaScript Goes Here...
+
+
+			$(document).ready(function() {
+				// model
+				var model = 
+				{
+					timerObj : null,
+					interval : 500,
+					circles : [
+							{left: 0, top: 0, color: "rgb(255, 0, 0)"},
+							{left: 0, top: 0, color: "rgb(255, 0, 0)"},
+							{left: 0, top: 0, color: "rgb(255, 0, 0)"},
+							{left: 0, top: 0, color: "rgb(255, 0, 0)"},
+
+							{left: 0, top: 0, color: "rgb(255, 0, 0)"},
+							{left: 0, top: 0, color: "rgb(255, 0, 0)"},
+							{left: 0, top: 0, color: "rgb(255, 0, 0)"},
+							{left: 0, top: 0, color: "rgb(255, 0, 0)"},
+
+							{left: 0, top: 0, color: "rgb(255, 0, 0)"},
+							{left: 0, top: 0, color: "rgb(255, 0, 0)"},
+							{left: 0, top: 0, color: "rgb(255, 0, 0)"},
+							{left: 0, top: 0, color: "rgb(255, 0, 0)"},
+
+							{left: 0, top: 0, color: "rgb(255, 0, 0)"},
+							{left: 0, top: 0, color: "rgb(255, 0, 0)"},
+							{left: 0, top: 0, color: "rgb(255, 0, 0)"},		
+							{left: 0, top: 0, color: "rgb(255, 0, 0)"}
+						 ]
+				};
+
+				//var divs = $("#treeDiv").children();
+				for (var i = 0; i < 16; i++)
+				{
+					var selector = "#treeDiv div:eq(" + i + ")";
+					model.circles[i].color = "rgb(0,255,0)";
+
+					var left = Math.floor((Math.random() * 450) + 50);
+					var top = Math.floor((Math.random() * 200) + 20);
+					model.circles[i].left = left;
+					model.circles[i].top = top;
+				}
+
+
+				// view
+				function updateView()
+				{
+
+					for (var i = 0; i < 16; i++)
+					{
+						var selector = "#treeDiv div:eq(" + i + ")";					
+						$(selector).css("left", model.circles[i].left);
+						$(selector).css("top", model.circles[i].top);
+						$(selector).css("background-color", model.circles[i].color);
+					}
+
+				}
+
+				// controller
+				function fireworks()
+				{
+					for (var i = 0; i < 16; i++)
+					{
+						var selector = "#treeDiv div:eq(" + i + ")";
+						var red = Math.floor((Math.random() * 255) + 0);	
+						var green = Math.floor((Math.random() * 255) + 0);	
+						var blue = Math.floor((Math.random() * 255) + 0);	
+						model.circles[i].color = 
+							"rgb(" + red + ", " + green + ", " + blue + ")";
+						updateView();
+					}
+				}
+
+				updateView();
+
+				model.timerObj = setInterval(fireworks, model.interval);
+				$("#btn").click(function () 
+				{
+					model.interval = parseInt($("#interval").val());
+					clearInterval(model.timerObj);
+					model.timerObj = setInterval(fireworks, model.interval);
+				});
+
+			});
+
+		</script>
+
+	</body>
+</html>
