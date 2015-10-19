@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  </head>
+
+
+  <style>
+    /* Local Styles Go Here */
+    .buttonDiv 
+    {
+      text-align: center;
+    }
+  </style>
+
+  <body>
+    <!-- HTML Goes Here... -->
+
+    <div data-role="page" id="MainPage">
+
+      <div data-role="header" data-position="fixed">
+        <h1>My Contacts</h1>
+      </div>
+
+      <div data-role="main" class="ui-content">
+      </div>
+
+      <div data-role="footer" data-position="fixed">
+        <h1 id="footer"></h1>
+      </div>
+    </div>
+
+    <script>
+    $(document).ready(function () 
+    {
+      var url = "http://php-csci343.rhcloud.com/SimpleContacts.php";
+      
+      var request = $.getJSON(url);
+
+      request.done(function(json) 
+      {
+          console.log( "done ");
+          console.log(json);
+          for (var contact in json)
+          {
+            $("div[data-role='main']").append("<p>"+json[contact].First+"</p>");
+          }
+      });
+
+      request.fail(function() {
+          console.log( "error" );
+      })
+    });
+    
+      // Local JavaScript Goes Here...
+    </script>
+
+  </body>
+</html>
+
+<!--
+  Additional Exercises:
+  
+  1)  Change the code above so the last name and 
+      phone number are also included in the paragraph
+      for each contact.
+
+  2)  Change the code above so that each contact is listed
+      in jquery mobile list view instead of a paragraph.
+      List your contacts using lastname, firstname format.
+      Include auto dividers in your list view that break the 
+      list up alphabetically.  After you create the list view,
+      you may need to call .listview("refresh") or your list
+      to get the list to display correclty.
+      See the following for help:
+
+      http://www.w3schools.com/jquerymobile/jquerymobile_list_views.asp
+      http://stackoverflow.com/questions/8753783/how-to-dynamically-build-list-view-jquerymobile
+
+
+-->
+

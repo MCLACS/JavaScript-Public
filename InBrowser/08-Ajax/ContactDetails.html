@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  </head>
+
+
+  <style>
+    /* Local Styles Go Here */
+    .buttonDiv 
+    {
+      text-align: center;
+    }
+  </style>
+
+  <body>
+    <!-- HTML Goes Here... -->
+
+    <div data-role="page" id="MainPage">
+
+      <div data-role="header" data-position="fixed">
+        <h1>My Contacts</h1>
+      </div>
+
+      <div data-role="main" class="ui-content">
+        <div id="grid" class="ui-grid-b ui-responsive">
+        </div>
+      </div>
+
+      <div data-role="footer" data-position="fixed">
+        <h1 id="footer"></h1>
+      </div>
+    </div>
+
+    <div data-role="page" data-dialog="true" id="dialog">
+      <div class="ui-content">
+        <h2>Contact Info</h2>
+        <p>
+          <span id="firstDetail"></span> <span id="lastDetail"></span><br/>
+          <span id="phoneDetail"></span>
+        </p>
+        <a href="#MainPage" class="ui-btn ui-btn-inline ui-icon-back ui-btn-icon-left">Back</a>
+      </div>
+    </div>  
+
+    <script>
+    // model
+    var model = {sel: -1, json: "" };
+
+    // view
+    function loadView()
+    {
+        $("#grid").empty();
+        console.log( "done ");
+        console.log(model);
+        var ary = ["ui-block-a", "ui-block-b", "ui-block-c"];
+        for (var contact in model.json)
+        {
+          $("#grid").append(
+              "<div class='buttonDiv " + 
+              ary[contact%3] + 
+              "'><a href='#' class='ui-btn ui-btn-inline contactBtn' index='" + contact + "'>" + 
+              model.json[contact].First + 
+              " </a></div>");
+        }      
+    }
+    function  updateDialog()
+    {
+      $("#firstDetail").text(model.json[model.sel].First);
+      $("#lastDetail").text(model.json[model.sel].Last);
+      $("#phoneDetail").text(model.json[model.sel].Phone);
+    }
+
+    // controller...
+    $(document).ready(function () 
+    {
+      var url = "http://php-csci343.rhcloud.com/SimpleContacts.php";
+      var request = $.getJSON(url);
+
+      request.done(function(json) 
+      {
+        model.json = json;
+        loadView();
+
+        $(".contactBtn").click(function ()
+        {
+          model.sel = $(this).attr("index");
+          updateDialog();
+          $(':mobile-pagecontainer').pagecontainer('change', '#dialog');
+        });  
+
+      });
+
+      request.fail(function() {
+          console.log( "error" );
+      });
+
+    });
+    
+
+    $(document).ajaxStart(function() {
+      $.mobile.loading('show');
+    });
+
+    $(document).ajaxStop(function() {
+      $.mobile.loading('hide');
+    });
+    </script>
+
+  </body>
+</html>
+
+<!--
+  Additional Exercises:
+  
+  1)  
+
+-->
+

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  </head>
+
+
+  <style>
+    /* Local Styles Go Here */
+    .buttonDiv 
+    {
+      text-align: center;
+    }
+  </style>
+
+  <body>
+    <!-- HTML Goes Here... -->
+
+    <div data-role="page" id="MainPage">
+
+      <div data-role="header" data-position="fixed">
+        <h1>My Contacts</h1>
+      </div>
+
+      <div data-role="main" class="ui-content">
+        <div id="grid" class="ui-grid-b ui-responsive">
+        </div>
+      </div>
+
+      <div data-role="footer" data-position="fixed">
+        <h1 id="footer"></h1>
+      </div>
+    </div>
+
+    <script>
+    $(document).ready(function () 
+    {
+      var url = "http://php-csci343.rhcloud.com/SimpleContacts.php";
+      
+      var request = $.getJSON(url);
+
+      request.done(function(json) 
+      {
+          console.log( "done ");
+          console.log(json);
+          var ary = ["ui-block-a", "ui-block-b", "ui-block-c"];
+          for (var contact in json)
+          {
+            $("#grid").append(
+                "<div class='buttonDiv " + 
+                ary[contact%3] + 
+                "'><a href='#' class='ui-btn ui-btn-inline'>" + 
+                json[contact].First + 
+                " </a></div>");
+          }
+      });
+
+      request.fail(function() {
+          console.log( "error" );
+      })
+    });
+    
+
+    $(document).ajaxStart(function() {
+      $.mobile.loading('show');
+    });
+
+    $(document).ajaxStop(function() {
+      $.mobile.loading('hide');
+    });
+
+      // Local JavaScript Goes Here...
+    </script>
+
+  </body>
+</html>
+
+<!--
+  Additional Exercises:
+  
+  1)  Change the code above so that the names are listed in 
+      lastname, firstname format.
+
+  2)  Change the code above so that the background of the footer
+      turns red when the contact data is loading form the 
+      server, and green when it is done.
+
+-->
+
