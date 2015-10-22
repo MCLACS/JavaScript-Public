@@ -51,8 +51,8 @@
       <div class="ui-content">
         <h2>Login</h2>
         <form action="http://php-csci343.rhcloud.com/SimpleContactsWithLogon.php" id="loginForm">
-            <input type="text" name="user" id="#user"/>
-            <input type="password" name="pass" id="#pass"/>
+            <input type="text" name="user" id="user"/>
+            <input type="password" name="pass" id="pass"/>
             <input type="submit" value="Login" />
         </form>        
       </div>
@@ -102,7 +102,7 @@
       {
           event.preventDefault();
 
-          var postData = {user: "robo", pass: "obor"} //$(this).serialize();
+          var postData = {user: $("#user").val(), pass: $("#pass").val()} //$(this).serialize();
           var url = $(this).attr('action');
 
           var posting = $.post(url, postData);
