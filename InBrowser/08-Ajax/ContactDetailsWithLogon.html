@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-  <head>    
+  <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
@@ -11,7 +11,7 @@
 
   <style>
     /* Local Styles Go Here */
-    .buttonDiv 
+    .buttonDiv
     {
       text-align: center;
     }
@@ -45,7 +45,7 @@
         </p>
         <a href="#MainPage" class="ui-btn ui-btn-inline ui-icon-back ui-btn-icon-left">Back</a>
       </div>
-    </div>  
+    </div>
 
     <div data-role="page" data-dialog="true" id="loginDialog">
       <div class="ui-content">
@@ -54,9 +54,9 @@
             <input type="text" name="user" id="user"/>
             <input type="password" name="pass" id="pass"/>
             <input type="submit" value="Login" />
-        </form>        
+        </form>
       </div>
-    </div> 
+    </div>
 
     <script>
     // model
@@ -70,22 +70,16 @@
         var ary = ["ui-block-a", "ui-block-b", "ui-block-c"];
         for (var contact in model.json)
         {
-          if (model.loggedin == false)
-          {
-            console.log( "user must login");
-            $(':mobile-pagecontainer').pagecontainer('change', '#loginDialog');
-          }
-          else
-          {
-            $("#grid").append(
-                "<div class='buttonDiv " + 
-                ary[contact%3] + 
-                "'><a href='#' class='ui-btn ui-btn-inline contactBtn' index='" + contact + "'>" + 
-                model.json[contact].First + 
-                " </a></div>");
-          }
-        }  
+          $("#grid").append(
+              "<div class='buttonDiv " +
+              ary[contact%3] +
+              "'><a href='#' class='ui-btn ui-btn-inline contactBtn' index='" + contact + "'>" +
+              model.json[contact].First +
+              " </a></div>");
+        }
+        $(':mobile-pagecontainer').pagecontainer('change', '#MainPage');
     }
+
     function  updateDialog()
     {
       $("#firstDetail").text(model.json[model.sel].First);
@@ -94,22 +88,21 @@
     }
 
     // controller...
-    $(document).ready(function () 
+    $(document).ready(function ()
     {
-      getContacts();
-
-      $("#loginForm").submit(function(event) 
+      $("#loginForm").submit(function(event)
       {
           event.preventDefault();
 
-          var postData = {user: $("#user").val(), pass: $("#pass").val()} //$(this).serialize();
+          var postData =
+            {cmd: "login", user: $("#user").val(), pass: $("#pass").val()}
           var url = $(this).attr('action');
 
           var posting = $.post(url, postData);
 
-          posting.done(function(json1) 
+          posting.done(function(json1)
           {
-            if (json1[0].First == "TRUE")
+            if (json1.loggedIn == "TRUE")
             {
               model.loggedin = true;
               console.log("login success");
@@ -121,25 +114,52 @@
             }
           });
 
-          posting.fail(function() 
+          posting.fail(function()
           {
             console.log( "error" );
           });
       });
 
+      isLoggedIn();
     });
-    
-    function getContacts()
+
+    function login()
     {
-      var url = "http://php-csci343.rhcloud.com/SimpleContactsWithLogon.php";
+      console.log( "user must login");
+      $(':mobile-pagecontainer').pagecontainer('change', '#loginDialog');
+    }
+
+    function isLoggedIn()
+    {
+      var url = "http://php-csci343.rhcloud.com/SimpleContactsWithLogon.php?cmd=isLoggedIn";
       var request = $.getJSON(url);
 
-      request.done(function(json) 
+      request.done(function(json)
+      {
+        if (json.loggedIn == "FALSE")
+        {
+          login();
+        }
+        else
+        {
+          getContacts();
+        }
+      });
+
+      request.fail(function()
+      {
+          console.log( "error" );
+      });
+    }
+
+    function getContacts()
+    {
+      var url = "http://php-csci343.rhcloud.com/SimpleContactsWithLogon.php?cmd=contacts";
+      var request = $.getJSON(url);
+
+      request.done(function(json)
       {
         model.json = json;
-        if (model.loggedin == true)
-          $.mobile.back()
-
         loadView();
 
         $(".contactBtn").click(function ()
@@ -147,14 +167,14 @@
           model.sel = $(this).attr("index");
           updateDialog();
           $(':mobile-pagecontainer').pagecontainer('change', '#detailsDialog');
-        });  
+        });
 
-      });      
+      });
 
-      request.fail(function() 
+      request.fail(function()
       {
           console.log( "error" );
-      });      
+      });
     }
 
     $(document).ajaxStart(function() {
@@ -171,8 +191,7 @@
 
 <!--
   Additional Exercises:
-  
-  1)  
+
+  1)
 
 -->
-
