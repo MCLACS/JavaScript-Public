@@ -11,6 +11,7 @@ function main()
   foo2();
 
   hoisting();
+  hoisting2();
 }
 
 function foo()
