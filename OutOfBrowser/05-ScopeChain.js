@@ -1,12 +1,12 @@
 // this is the global object scope
-// any veraible defined here is actually
+// any variable defined here is actually
 // an attribute of the global object
 var iBelongToGlobal = "global";
 console.log(iBelongToGlobal);
 
 foo();
 
-// this starts the functin scope for foo
+// this starts the function scope for foo
 // and any variables here are atributes of the
 // foo function object, inside this function
 // the scope chain in foo looks like this:
@@ -23,6 +23,13 @@ function foo()
 
   // found in foo
   foobar();
+
+  // dude, how can we have two functions with
+  // the same name... I hate JavaScript!
+  function hello()
+  {
+    console.log("Crazy Hello");
+  }
 
   // the scope chain in foobat looks like this:
   //    foobar -> foo -> global
