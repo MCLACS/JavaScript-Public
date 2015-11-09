@@ -24,7 +24,7 @@ Customer.prototype.setExitTime = function(exitTime)
 
 Customer.prototype.getTimeInLine = function()
 {
-  return this.m_serviceTime - this.m_serviceTim;
+  return this.m_serviceTime - this.m_enterTime;
 };
 
 Customer.prototype.getTimeInBank = function()

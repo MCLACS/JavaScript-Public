@@ -30,9 +30,9 @@ function main()
     // if there is someone at the counter and they are done
     // getting help, they should leave the bank...
     r = Math.floor(Math.random()*100);
-    if (f < 33 && atCounter != undefined)
+    if (r < 33 && atCounter != undefined)
     {
-      leaveTheBank(atCounter, leftTheBank, time);
+      leaveTheBank();
     }
 
     // if there is nobody at the counter and there is someone on line
@@ -47,7 +47,7 @@ function main()
 
   function addToQueue()
   {
-    c = new Customer(time);
+    c = new C.Customer(time);
     queue.push(c);
   }
 
@@ -61,17 +61,17 @@ function main()
   function moveToCounter()
   {
     c = queue.shift();
-    c.setServiceTime = time; // it talks like a duck...
+    c.setServiceTime(time); // it talks like a duck...
     atCounter = c;
   }
 
   function printStats()
   {
     var total = 0;
-    for (c in leftTheBank)
+    for (var i in leftTheBank)
     {
-      total += c.getTimeInLine();
+      total += leftTheBank[i].getTimeInLine();
     }
-    console.log("Ave Time In Line: " + total / leftTheBank.length);
+    console.log("Ave Time In Line: " + (total / leftTheBank.length).toFixed(2));
   }
 }
