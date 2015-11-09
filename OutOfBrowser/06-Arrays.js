@@ -87,3 +87,6 @@ function main()
   }
 
 }
+
+// other methods
+// shift and splice...
