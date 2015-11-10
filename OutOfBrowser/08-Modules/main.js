@@ -5,7 +5,7 @@ function main()
   var numbers = [];
   for (var i = 0; i < 1000; i++)
   {
-    numbers.push(m.rand(numbers, 100, 200));
+    numbers.push(m.rand(100, 200));
   }
 
   console.log("min: " + m.min(numbers));
