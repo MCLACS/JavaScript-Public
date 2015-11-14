@@ -96,7 +96,7 @@ function main()
   }
   console.log();
   console.log("Delete and print with for each loop...");
-  for (var i in ary8)
+  for (i in ary8)
   {
     console.log(ary8[i]);
   }
@@ -105,7 +105,7 @@ function main()
   console.log("Shift...");
   var ary9 = ["zero", "one", "two", "three", "four", "five"];
   console.log(ary9.shift());
-  for (var i = 0; i < ary9.length; i++)
+  for (i = 0; i < ary9.length; i++)
   {
     console.log(ary9[i]);
   }
@@ -114,7 +114,7 @@ function main()
   console.log("Splice...");
   var ary10 = ["zero", "one", "two", "three", "four", "five"];
   console.log(ary10.splice(1, 2));
-  for (var i = 0; i < ary10.length; i++)
+  for (i = 0; i < ary10.length; i++)
   {
     console.log(ary10[i]);
   }
