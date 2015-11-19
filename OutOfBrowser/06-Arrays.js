@@ -61,6 +61,7 @@ function main()
   console.log(ary6);
   console.log(Object.keys(ary6));
 
+console.log("\n\nStart object example");
   // objects are like arrays, but they don't keep track of length
   console.log();
   console.log("Objects are like arrays...");
@@ -73,8 +74,10 @@ function main()
   // notice that objects don't keep track of the length attribute
   // so this is undefined...
   console.log(obj.length);
+console.log("End object example\n\n");
 
-  // becareful, once you add an index that is not a number
+console.log("\n\nStart object 2 example");
+  // be careful, once you add an index that is not a number
   // the array stops keeping track of length and therefore
   // it starts acting like an object
   console.log();
@@ -84,7 +87,9 @@ function main()
   ary7["four"] = "fourth";
   console.log(Object.keys(ary7));
   console.log(ary7.length);
+console.log("End object 2 example\n\n");
 
+console.log("\n\nStart iterating");
   // iterating...
   console.log();
   console.log("Delete and print with for loop...");
@@ -100,6 +105,7 @@ function main()
   {
     console.log(ary8[i]);
   }
+  console.log("End iterating example\n\n");
 
   console.log();
   console.log("Shift...");

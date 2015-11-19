@@ -17,7 +17,7 @@ rl.on('line', function(line)
         default:
             console.log(line.trim() +
               '? ... how long have you had this problem?');
-        break;
+            break;
     }
     rl.prompt();
 }).on('close', function()

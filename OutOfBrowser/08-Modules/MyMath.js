@@ -22,9 +22,9 @@ function max(numbers)
   return max;
 }
 
-function rand(numbers, from, to)
+function rand(from, to)
 {
-  return Math.floor((Math.random() * to)) + from;
+  return Math.floor((Math.random() * (to-from)) + from;
 }
 
 module.exports.min = min;
