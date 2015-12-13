@@ -27,8 +27,5 @@ function main()
     console.log("CV2X ", cv2.getXComp());
     console.log("CV2Y ", cv2.getYComp());
     console.log("CV2Mag ", cv2.getMagnitude());
-
 }
-
-
 main();
