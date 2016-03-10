@@ -13,7 +13,7 @@
 			height: 50px;
 			width: 200px;
 			border: 1px solid black;
-		}		
+		}
 	</style>
 
 	<body>
@@ -26,30 +26,30 @@
 		<div class="odd"></div>
 		<div class="even"></div>
 		<div class="odd"></div>
-		<div id="last" class="even" ></div>	
+		<div id="last" class="even" ></div>
 
 		<input id="btn1" type="button" value="Change Odds and Evens"/>
 		<input id="btn2" type="button" value="Change First and Last"/>
-		<input id="btn3" type="button" value="Change All"/>		
+		<input id="btn3" type="button" value="Change All"/>
 
 		<script>
 			// Local JavaScript Goes Here...
 			function changeOddEven()
 			{
-				$("div").text("");				
+				$("div").text("");
 				$(".odd").text("This are odd!");
-				$(".even").text("This is even!");				
+				$(".even").text("This is even!");
 			}
 			function changeFirstLast()
 			{
-				$("div").text("");				
+				$("div").text("");
 				$("#first").text("This are first!");
-				$("#last").text("This is Last!");				
+				$("#last").text("This is Last!");
 			}
 			function changeAll()
 			{
-				$("div").text("");				
-				$("div").text("We are all divs!");				
+				$("div").text("");
+				$("div").text("We are all divs!");
 			}
 
 			$('#btn1').click(changeOddEven);
@@ -61,13 +61,17 @@
 	</body>
 </html>
 
-<!-- 
+<!--
 	Additional Exercises:
 
 	1)	Add a fourth button that sets the text of all even
-		divs to "<h1>I am big</h1>".  Is the h1 tag working?
+		divs to "<h1>I am big</h1>".  Why isn't the h1 tag working?
+		Research the jQuery "html()"" method here:
+		http://www.w3schools.com/jquery/html_html.asp
+		and then fix the problem.
 
-	2) 	Edit the code above so that even and odd divs are 
+
+	2) 	Edit the code above so that even and odd divs are
 		changed using the even and odd selectors.  You can
 		learn how to use these selectors here:
 		http://www.w3schools.com/jquery/jquery_ref_selectors.asp.

@@ -37,8 +37,8 @@
 			function changeCoolness()
 			{
 				var value = $(this).attr("key");
-				$("div[coolness]").text("");			
-				$("div[coolness='" + value + "']").text("My coolness is " + value);			
+				$("div[coolness]").text("");
+				$("div[coolness='" + value + "']").text("My coolness is " + value);
 			}
 
 			$("input[type='button']").click(changeCoolness);
@@ -48,15 +48,15 @@
 	</body>
 </html>
 
-<!-- 
+<!--
 	Additional Exercises:
 
-	1)	Add a fourth button that sets the text of all divs 
-		with a coolness of high or med equal "I am cool".
+	1)	Add a fourth button that sets the text of all divs
+		with a coolness of high or med equal to "I am cool".
 		Consult http://www.w3schools.com/jquery/jquery_ref_selectors.asp
 		for help.
 
-	2)	Add a fifth button that sets the text of all divs 
+	2)	Add a fifth button that sets the text of all divs
 		with a coolness value that contains the letter 'e'.
 		Consult http://www.w3schools.com/jquery/jquery_ref_selectors.asp
 		for help.
