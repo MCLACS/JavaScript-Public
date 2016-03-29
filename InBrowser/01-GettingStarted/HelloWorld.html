@@ -16,16 +16,16 @@
 		</p>
 		<input type="button" value="Display Greeting" id="btn"/><br/>
 
-		<p id="greeting"></p>	
+		<p id="greeting"></p>
 
 		<script>
 			// Local JavaScript Goes Here...
 
-			/* 
+			/*
 				this variable has global scope
 			*/
 			var hello_g = "Hello ";
-			
+
 			function sayHello()
 			{
 				// this variable has local scope...
@@ -36,7 +36,7 @@
 				alert(greeting);
 			}
 
-			// notice that the function name is actually 
+			// notice that the function name is actually
 			// a reference to a function object
 			$('#btn').click(sayHello);
 		</script>
@@ -44,32 +44,31 @@
 	</body>
 </html>
 
-<!-- 
+<!--
 	Additional Exercises:
 
-	1) 	Add a field for age and then change the greeting so that 
+	1) 	Add a field for age and then change the greeting so that
 	   	it says "Cheers!" if the person is 21 or older.
 
-	2) 	Check to make sure that values have been entered for name 
+	2) 	Check to make sure that values have been entered for name
 		and age.  If they are empty, use just an alert box asking
-		the user to please enter both fields.  Only display the 
+		the user to please enter both fields.  Only display the
 	   	greeting if they enter both values.
 
 	3) 	Use the following function to check that the age entered
 	   	is an integer.  If it is not, display an alert asking the
 	   	user to try again.
 
-	   	function isInteger(value) 
+	   	function isInteger(value)
 	   	{
 	   		value = parseInt(value);
-     		return 	typeof value === "number" && 
-           			isFinite(value) && 
+     		return 	typeof value === "number" &&
+           			isFinite(value) &&
            			Math.floor(value) === value;
         }
 
 	4) 	Visit the following page to view all of the methods
 		that the JavaScript string type supports.
 
-		http://www.w3schools.com/js/js_string_methods.asp        
+		http://www.w3schools.com/js/js_string_methods.asp
 -->
-

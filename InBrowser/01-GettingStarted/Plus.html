@@ -17,15 +17,16 @@
 		</p>
 		<input type="button" value="Plus" id="btn"/><br/>
 
-		<p id="plus"></p>	
+		<p id="plus"></p>
 
 		<script>
 			// Local JavaScript Goes Here...
-			
+
 			function showPlus()
 			{
-				
-				var plus = $('#val1').val() + $('#val2').val();
+				var val1 = parseInt($('#val1').val());
+				var val2 = parseInt($('#val2').val());
+				var plus = val1 + val2;
 				$('#plus').text(plus);
 			}
 
@@ -35,12 +36,12 @@
 	</body>
 </html>
 
-<!-- 
+<!--
 	Additional Exercises:
 
 	1) 	Fix the showPlus function so it concatenates the values
-		only if one of them is a string, and adds the values only 
-		if both of them are a number.  Your code should work for 
+		only if one of them is a string, and adds the values only
+		if both of them are a number.  Your code should work for
 		integers and floats.
 
 	2) 	Visit the following page to view all of the methods
@@ -48,4 +49,3 @@
 
 		http://www.w3schools.com/js/js_number_methods.asp
 -->
-

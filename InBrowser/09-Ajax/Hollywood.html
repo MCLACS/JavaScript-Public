@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	</head>
+
+
+	<style>
+		/* Local Styles Go Here */
+	</style>
+
+	<body>
+		<!-- HTML Goes Here... -->
+		<ul id="actors">
+		</ul>
+
+		<script>
+			// Local JavaScript Goes Here...
+
+			// model...
+			var model = {};
+			model.actors = [];
+
+			// view ...
+			function updateView()
+			{
+				for (var index in model.actors)
+				{
+					var actor = model.actors[index];
+					$("#actors").append("<li>"+
+						actor.first_name+ " "+actor.last_name+
+						" - "+
+						actor.title+
+						"</li>");
+				}
+			}
+
+			// controller ...
+			$(document).ready(function ()
+			{
+			  var url = "https://php-csci343.rhcloud.com/SP16/Assignments/Hollywood.php?cmd=actors&filmName=NETWORK";
+			  var request = $.getJSON(url);
+
+			  request.done(function(json)
+			  {
+				  console.log(json);
+				  model.actors = json;
+				  updateView();
+			  });
+
+			  request.fail(function() {
+		          console.log( "error" );
+		      });
+		  	});
+
+		</script>
+
+	</body>
+</html>
