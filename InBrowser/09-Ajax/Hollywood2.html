@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	</head>
+
+
+	<style>
+		/* Local Styles Go Here */
+	</style>
+
+	<body>
+		<!-- HTML Goes Here... -->
+		<p><input id="film" type="text"/></p>
+		<p><input id="btn" type="button" value="Get Actors"/></p>
+
+		<h1>Results:</h1>
+		<ul id="actors">
+		</ul>
+
+		<script>
+			// Local JavaScript Goes Here...
+
+			// model...
+			var model = {};
+			model.actors = [];
+
+			// view ...
+			function updateView()
+			{
+				$("#actors").empty();
+				for (var index in model.actors)
+				{
+					var actor = model.actors[index];
+					$("#actors").append("<li>"+
+						actor.first_name+ " "+actor.last_name+
+						" - "+
+						actor.title+
+						"</li>");
+				}
+			}
+
+			// controller ...
+			$(document).ready(function ()
+			{
+		  	});
+
+			$("#btn").click(function ()
+			{
+				var f = $("#film").val();
+				var url = "https://php-csci343.rhcloud.com/SP16/Assignments/Hollywood.php?cmd=actors&filmName="+f;
+  			  	var request = $.getJSON(url);
+
+				request.done(function(json)
+  			    {
+  				  console.log(json);
+  				  model.actors = json;
+  				  updateView();
+  			    });
+
+  			  request.fail(function() {
+  		          console.log( "error" );
+  		      });
+
+			});
+
+		</script>
+
+	</body>
+</html>
