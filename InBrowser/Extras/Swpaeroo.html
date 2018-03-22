@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	</head>
+
+
+	<style>
+		/* Local Styles Go Here */
+	</style>
+
+	<body>
+		<!-- HTML Goes Here... -->
+		
+		<!-- view -->
+		<h1>How To Get Good Grades</h1>
+		<div id="tip0"></div>
+		<div id="tip1"></div>
+		<div id="tip2"></div>
+		
+		<p id='swaps'></p>
+		<input id='swap' type='button' value='Swap!'></input>
+
+		<script>
+			// Local JavaScript Goes Here...
+			
+			// model...
+			var model = { swapCount: 0,  tips: ['Study Hard', 'Get Lots Of Sleep', 'Attend Class'] };
+			
+			// controller...
+			function updateView()
+			{
+				for (var i in model.tips)
+				{
+					$("#tip" + i).text(model.tips[i]);
+				}
+				$('#swaps').text(model.swapCount);
+			}
+			
+			$("#swap").click(function ()
+			{
+				var temp0 = model.tips[0];
+				var temp1 = model.tips[1];
+				var temp2 = model.tips[2];
+				model.tips[1] = temp0;
+				model.tips[2] = temp1;
+				model.tips[0] = temp2;
+				
+				model.swapCount++;
+				
+				updateView();
+			});
+			
+			$(document).ready(updateView);
+			
+		</script>
+
+	</body>
+</html>
