@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	</head>
+
+
+	<style>
+		/* Local Styles Go Here */
+		.cool
+		{
+			color: red;	
+		}
+	</style>
+
+	<body>
+		<!-- HTML Goes Here... -->
+		<!-- VIEW... -->
+		<div class="container-fluid">
+        <form>
+			<div class="form-group">
+			    <label for="name">Name</label>
+                <input id="name" type="text" name="name" class="form-control"/>
+            </div>
+			<div class="form-group">
+			    <label for="age">Age</label>
+                <input id="age" type="text" name="age" class="form-control"/>
+            </div>
+			<div class="form-group">
+			    <label for="year">Year</label>
+                <input id="year" type="text" name="year" class="form-control"/>
+            </div>
+            <p><input id="btnOK" type="button" class="btn btn-primary" value="OK"></p>
+        </form>
+        
+        <input id="btnChange" type="button" class="btn btn-primary" value="Change">
+		
+		<ul id='mainList'>
+		</ul>
+		
+		
+		</div>
+		<script>
+			// Local JavaScript Goes Here...
+		
+			// this is the model
+			var model = [  ]; 
+			
+			// view 
+			function updateView()
+			{
+				$("#mainList").empty();
+				for (var i in model)
+				{
+					var obj = model[i];
+					$("#mainList").append(
+						"<li>" + 
+							obj.name + " - " +
+							obj.age + " - " +
+							obj.year +
+						"</li>");
+				}
+			}
+			
+			// controller
+			$(document).ready(function ()
+			{
+				
+				updateView();
+			});
+			
+			$("#btnOK").click(function ()
+			{
+				var n = $("#name").val();
+				var a = $("#age").val();
+				var y = $("#year").val();
+				model.push({ name: n, age: a, year: y});
+				
+				updateView();
+			});
+						
+			$("#btnChange").click(function ()
+			{
+				$("#mainList").addClass("cool");
+				$("#mainList").fadeToggle(3000);
+			});
+			
+			
+			
+		</script>
+
+	</body>
+</html>
