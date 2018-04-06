@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <title>My Dialog</title>
+
+    <!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+    <style>
+		form
+		{
+			padding: 5px;
+			border: 1px solid black;
+			box-shadow: 10px 10px 5px #888888;
+		}
+	</style>
+
+	</head>
+	<body>
+		<!-- page content -->
+		<div class="container">
+			<h2>My Courses</h2>
+			<button id="openDlg" type="button" class="btn btn-default">Open</button>
+		</div>
+		
+		<!-- jquery and bootstrap -->
+		<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+		<!-- custom local javascript -->
+		<script>
+			$(document).ready(function ()
+			{
+		        $("#openDlg").click(function()
+		        {
+		        	$('#dlg').modal('show');
+		        });
+		        $(".closeDlg").click(function()
+		        {
+		        	$('#dlg').modal('hide');
+		        });
+			});
+		</script>
+		
+		<div id="dlg" class="modal fade" tabindex="-1" role="dialog">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title">Fun Dialg</h4>
+		      </div>
+		      <div class="modal-body">
+				<form id="courseForm2">
+					<div class="form-group">
+						<label for="name">Name</label>
+						<input type="text" class="form-control"
+							id="name" name="name" placeholder="name">
+					</div>
+					<div class="form-group">
+						<label for="age">Age</label>
+						<input type="text" class="form-control"
+							id="age" name="age" placeholder="age">
+					</div>
+				</form>
+		      </div>
+		      <div class="modal-footer">
+		      	<button type="button" class="btn btn-primary closeDlg">Save</button>
+		        <button type="button" class="btn btn-default closeDlg" data-dismiss="modal">Cancel</button>
+		      </div>
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		
+	</body>
+</html>

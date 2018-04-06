@@ -50,9 +50,8 @@ function add()
 	$numbers = getSessionValue("numbers", []);
     $num = getValue("num", -1);
     $numbers[] = $num;
-	setSessionValue("numbers", $numbers);
 	$max = max($numbers);
-	
+	setSessionValue("numbers", $numbers);
     return array("largest"=>$max, "numbers"=>$numbers);
 }
 

@@ -15,3 +15,18 @@
 [21-Mar-2017 10:35:09 UTC] PHP Stack trace:
 [21-Mar-2017 10:35:09 UTC] PHP   1. {main}() /home/ubuntu/workspace/JavaScript-Public/InBrowser/09-Ajax/NumberGuess.php:0
 [21-Mar-2017 10:35:09 UTC] PHP   2. session_start() /home/ubuntu/workspace/JavaScript-Public/InBrowser/09-Ajax/NumberGuess.php:4
+[29-Mar-2018 15:39:01 UTC] PHP Warning:  max(): Array must contain at least one element in /home/ubuntu/workspace/JavaScript-Public/InBrowser/09-Ajax/AddToList.php on line 61
+[29-Mar-2018 15:39:01 UTC] PHP Stack trace:
+[29-Mar-2018 15:39:01 UTC] PHP   1. {main}() /home/ubuntu/workspace/JavaScript-Public/InBrowser/09-Ajax/AddToList.php:0
+[29-Mar-2018 15:39:01 UTC] PHP   2. fetch() /home/ubuntu/workspace/JavaScript-Public/InBrowser/09-Ajax/AddToList.php:16
+[29-Mar-2018 15:39:01 UTC] PHP   3. max() /home/ubuntu/workspace/JavaScript-Public/InBrowser/09-Ajax/AddToList.php:61
+[29-Mar-2018 15:42:18 UTC] PHP Warning:  max(): Array must contain at least one element in /home/ubuntu/workspace/JavaScript-Public/InBrowser/09-Ajax/AddToList.php on line 61
+[29-Mar-2018 15:42:18 UTC] PHP Stack trace:
+[29-Mar-2018 15:42:18 UTC] PHP   1. {main}() /home/ubuntu/workspace/JavaScript-Public/InBrowser/09-Ajax/AddToList.php:0
+[29-Mar-2018 15:42:18 UTC] PHP   2. fetch() /home/ubuntu/workspace/JavaScript-Public/InBrowser/09-Ajax/AddToList.php:16
+[29-Mar-2018 15:42:18 UTC] PHP   3. max() /home/ubuntu/workspace/JavaScript-Public/InBrowser/09-Ajax/AddToList.php:61
+[29-Mar-2018 15:43:29 UTC] PHP Warning:  max(): Array must contain at least one element in /home/ubuntu/workspace/JavaScript-Public/InBrowser/09-Ajax/AddToList.php on line 61
+[29-Mar-2018 15:43:29 UTC] PHP Stack trace:
+[29-Mar-2018 15:43:29 UTC] PHP   1. {main}() /home/ubuntu/workspace/JavaScript-Public/InBrowser/09-Ajax/AddToList.php:0
+[29-Mar-2018 15:43:29 UTC] PHP   2. fetch() /home/ubuntu/workspace/JavaScript-Public/InBrowser/09-Ajax/AddToList.php:16
+[29-Mar-2018 15:43:29 UTC] PHP   3. max() /home/ubuntu/workspace/JavaScript-Public/InBrowser/09-Ajax/AddToList.php:61
