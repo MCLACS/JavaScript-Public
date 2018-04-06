@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <title>My Dialog</title>
+
+    <!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+    <style>
+		form
+		{
+			padding: 5px;
+			border: 1px solid black;
+			box-shadow: 10px 10px 5px #888888;
+		}
+	</style>
+
+	</head>
+	<body>
+		<!-- page content -->
+		<div id="main" class="container">
+			<h2>My Dialogs</h2>
+			<button id="openDlg" type="button" class="btn btn-default">Open</button>
+		</div>
+		
+		<div id="dlg" class='container'>
+			<form id="testForm">
+				<div class="form-group">
+					<label for="name">Name</label>
+					<input type="text" class="form-control"
+						id="name" name="name" placeholder="name">
+				</div>
+				<div class="form-group">
+					<label for="age">Age</label>
+					<input type="text" class="form-control"
+						id="age" name="age" placeholder="age">
+				</div>
+			</form>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-primary closeDlg">Save</button>
+			  <button type="button" class="btn btn-default closeDlg">Cancel</button>
+			</div>
+		</div>		
+		
+		<!-- jquery and bootstrap -->
+		<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+		<!-- custom local javascript -->
+		<script>
+			$(document).ready(function ()
+			{
+				$('#dlg').hide();
+				
+		        $("#openDlg").click(function()
+		        {
+		        	$('#main').hide(2000);
+		        	$('#dlg').show(2000);
+		        });
+		        $(".closeDlg").click(function()
+		        {
+		        	$('#dlg').hide(1000);
+		        	$('#main').show(1000);
+		        });
+			});
+		</script>
+		
+
+		
+	</body>
+</html>
